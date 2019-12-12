@@ -8,7 +8,7 @@ do
 		echo $once >> archivo2.txt
 		echo $trece >> archivo2.txt
 	fi
-done < syslog-sample
+done < $1
 
 sort archivo2.txt > archivo1.txt
 cat archivo1.txt | tr "." ":" | grep "^[^:]*:[^:]*:[^:]*:[^:]*$" | tr ":" "." > archivo2.txt
